@@ -1,0 +1,22 @@
+{
+  "name": "flunt",
+  "version": "0.0.2",
+  "description": "Flunt is a package to help you to validate your business rules",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/andrebaltieri/flunt-js.git"
+  },
+  "keywords": [
+    "flunt"
+  ],
+  "author": "André Baltieri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrebaltieri/flunt-js/issues"
+  },
+  "homepage": "https://github.com/andrebaltieri/flunt-js#readme"
+}
