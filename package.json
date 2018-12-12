@@ -4,7 +4,7 @@
   "description": "Flunt is a package to help you to validate your business rules",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "node ./tests/all.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/andrebaltieri/flunt-js/issues"
   },
-  "homepage": "https://github.com/andrebaltieri/flunt-js#readme"
+  "homepage": "https://github.com/andrebaltieri/flunt-js#readme",
+  "dependencies": {
+    "test": "^0.6.0"
+  }
 }
