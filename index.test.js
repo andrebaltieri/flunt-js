@@ -9,7 +9,7 @@ test("Check if field 'name' has been sent", () => {
 
   contract.isRequired(customDoc.name, "name", "The name must be sent");
 
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'name' has not been sent", () => {
@@ -21,7 +21,7 @@ test("Check if field 'name' has not been sent", () => {
 
   contract.isRequired(customDoc.name, "name", "The name must be sent");
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'password' has minimum lenght 6 (test with more 6)", () => {
@@ -38,7 +38,7 @@ test("Check if field 'password' has minimum lenght 6 (test with more 6)", () => 
     "The password has been more 6 characters"
   );
 
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'password' has minimum lenght 6 (test with less 6)", () => {
@@ -55,7 +55,7 @@ test("Check if field 'password' has minimum lenght 6 (test with less 6)", () => 
     "The password has been more 6 characters"
   );
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'password' has max lenght 9 (test with more 9)", () => {
@@ -72,7 +72,7 @@ test("Check if field 'password' has max lenght 9 (test with more 9)", () => {
     "The password has been less 9 characters"
   );
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'password' has max lenght 9 (test with less 9)", () => {
@@ -89,7 +89,7 @@ test("Check if field 'password' has max lenght 9 (test with less 9)", () => {
     "The password has been less 9 characters"
   );
 
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'document' has fixed lenght 11 (test with 11)", () => {
@@ -106,7 +106,7 @@ test("Check if field 'document' has fixed lenght 11 (test with 11)", () => {
     "The document has been 11 characters"
   );
 
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'document' has fixed lenght 11 (test with 10)", () => {
@@ -123,7 +123,7 @@ test("Check if field 'document' has fixed lenght 11 (test with 10)", () => {
     "The document has been 11 characters"
   );
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'email' is a true email", () => {
@@ -139,7 +139,7 @@ test("Check if field 'email' is a true email", () => {
     "The email must been a true email"
   );
 
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'email' is a false email", () => {
@@ -155,7 +155,7 @@ test("Check if field 'email' is a false email", () => {
     "The email must been a true email"
   );
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'email' is null", () => {
@@ -171,7 +171,7 @@ test("Check if field 'email' is null", () => {
     "The email must been a true email"
   );
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'email' is undefined", () => {
@@ -187,7 +187,7 @@ test("Check if field 'email' is undefined", () => {
     "The email must been a true email"
   );
 
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'birthdate' is Date (field as date)", () => {
@@ -202,7 +202,7 @@ test("Check if field 'birthdate' is Date (field as date)", () => {
     "birthdate",
     "The birthdate must been a true date"
   );
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'birthdate' is Date (field as string)", () => {
@@ -217,7 +217,7 @@ test("Check if field 'birthdate' is Date (field as string)", () => {
     "birthdate",
     "The birthdate must been a true date"
   );
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'tomorrow' is greater than today (must be true)", () => {
@@ -230,13 +230,13 @@ test("Check if field 'tomorrow' is greater than today (must be true)", () => {
 
   let contract = new ValidationContract();
 
-  contract.DateIsGreaterThan(
+  contract.dateIsGreaterThan(
     customDoc.tomorrow,
     new Date(),
     "tomorrow",
     "The tomorrow must been a greater than date"
   );
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'tomorrow' is greater than today (must be false)", () => {
@@ -249,13 +249,13 @@ test("Check if field 'tomorrow' is greater than today (must be false)", () => {
 
   let contract = new ValidationContract();
 
-  contract.DateIsGreaterThan(
+  contract.dateIsGreaterThan(
     customDoc.tomorrow,
     new Date(),
     "tomorrow",
     "The tomorrow must been a greater than date"
   );
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });
 
 test("Check if field 'yesterday' is lower than today (must be true)", () => {
@@ -268,13 +268,13 @@ test("Check if field 'yesterday' is lower than today (must be true)", () => {
 
   let contract = new ValidationContract();
 
-  contract.DateIsLessThan(
+  contract.dateIsLessThan(
     customDoc.yesterday,
     new Date(),
     "yesterday",
     "The yesterday must been a less than date"
   );
-  expect(contract.IsValid()).toBe(true);
+  expect(contract.isValid()).toBe(true);
 });
 
 test("Check if field 'yesterday' is lower than today (must be false)", () => {
@@ -287,11 +287,11 @@ test("Check if field 'yesterday' is lower than today (must be false)", () => {
 
   let contract = new ValidationContract();
 
-  contract.DateIsLessThan(
+  contract.dateIsLessThan(
     customDoc.yesterday,
     new Date(),
     "yesterday",
     "The yesterday must been a less than date"
   );
-  expect(contract.IsValid()).toBe(false);
+  expect(contract.isValid()).toBe(false);
 });

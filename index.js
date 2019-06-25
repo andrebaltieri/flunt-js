@@ -32,7 +32,7 @@ ValidationContract.prototype.isEmail = (value, property, message) => {
   if (!reg.test(value)) errors.push({ property: property, message: message });
 };
 
-ValidationContract.prototype.IsNullOrUndefined = (value, property, message) => {
+ValidationContract.prototype.isNullOrUndefined = (value, property, message) => {
   if (value == null || value == undefined)
     errors.push({ property: property, message: message });
 };
@@ -43,13 +43,13 @@ function _isDate(value) {
   return Object.prototype.toString.call(value) == "[object Date]";
 }
 
-ValidationContract.prototype.IsDate = (value, property, message) => {
+ValidationContract.prototype.isDate = (value, property, message) => {
   if (!_isDate(value)) {
     errors.push({ property: property, message: message });
   }
 };
 
-ValidationContract.prototype.DateIsGreaterThan = (
+ValidationContract.prototype.dateIsGreaterThan = (
   value,
   comparer,
   property,
@@ -59,13 +59,33 @@ ValidationContract.prototype.DateIsGreaterThan = (
     errors.push({ property: property, message: message });
 };
 
-ValidationContract.prototype.DateIsLessThan = (
+ValidationContract.prototype.dateIsGreaterOrEqualsThan = (
+  value,
+  comparer,
+  property,
+  message
+) => {
+  if (!_isDate(value) || !_isDate(comparer) || value < comparer)
+    errors.push({ property: property, message: message });
+};
+
+ValidationContract.prototype.dateIsLessThan = (
   value,
   comparer,
   property,
   message
 ) => {
   if (!_isDate(value) || !_isDate(comparer) || value >= comparer)
+    errors.push({ property: property, message: message });
+};
+
+ValidationContract.prototype.dateIsLessOrEqualsThan = (
+  value,
+  comparer,
+  property,
+  message
+) => {
+  if (!_isDate(value) || !_isDate(comparer) || value > comparer)
     errors.push({ property: property, message: message });
 };
 
@@ -79,7 +99,7 @@ ValidationContract.prototype.clear = () => {
   errors = [];
 };
 
-ValidationContract.prototype.IsValid = () => {
+ValidationContract.prototype.isValid = () => {
   return errors.length == 0;
 };
 

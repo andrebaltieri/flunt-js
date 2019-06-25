@@ -30,10 +30,19 @@ yarn add flunt
 
 ## Validations Available
 
-| Validation | Description                                        |
-| ---------- | -------------------------------------------------- |
-| isRequired | Check if field has been send                       |
-| hasMinLen  | Check if the field has the minimum length informed |
+| Validation                | Description                                        |
+| ------------------------- | -------------------------------------------------- |
+| isRequired                | Check if field has been send                       |
+| hasMinLen                 | Check if the field has the minimum length informed |
+| hasMaxLen                 |                                                    |
+| isFixedLen                |                                                    |
+| isEmail                   |                                                    |
+| isNullOrUndefined         |                                                    |
+| isDate                    |                                                    |
+| dateIsGreaterThan         |                                                    |
+| dateIsGreaterOrEqualsThan |                                                    |
+| dateIsLessThan            |                                                    |
+| dateIsLessOrEqualsThan    |                                                    |
 
 ## Usage
 
