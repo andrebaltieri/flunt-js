@@ -21,6 +21,11 @@ ValidationContract.prototype.hasMaxLen = (value, max, property, message) => {
     errors.push({ property: property, message: message });
 };
 
+ValidationContract.prototype.hasLen = (value, len, property, message) => {
+  if (!value || value.length != len)
+    errors.push({ property: property, message: message });
+};
+
 ValidationContract.prototype.isFixedLen = (value, len, property, message) => {
   if (value.length != len)
     errors.push({ property: property, message: message });
@@ -31,7 +36,7 @@ ValidationContract.prototype.isEmail = (value, property, message) => {
   if (!reg.test(value)) errors.push({ property: property, message: message });
 };
 
-ValidationContract.prototype.IsNullOrNullable = (value, property, message) => {
+ValidationContract.prototype.IsNullOrUndefined = (value, property, message) => {
   if (value == null || value == undefined)
     errors.push({ property: property, message: message });
 };
