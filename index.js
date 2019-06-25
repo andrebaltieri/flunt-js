@@ -89,6 +89,27 @@ ValidationContract.prototype.dateIsLessOrEqualsThan = (
     errors.push({ property: property, message: message });
 };
 
+ValidationContract.prototype.dateIsEquals = (
+  value,
+  comparer,
+  property,
+  message
+) => {
+  if (!_isDate(value) || !_isDate(comparer) || value != comparer)
+    errors.push({ property: property, message: message });
+};
+
+ValidationContract.prototype.dateIsBetween = (
+  value,
+  from,
+  to,
+  property,
+  message
+) => {
+  if (!_isDate(value) || !_isDate(comparer) || !(value > from && value < to))
+    errors.push({ property: property, message: message });
+};
+
 /* End Date Validations */
 
 ValidationContract.prototype.errors = () => {
