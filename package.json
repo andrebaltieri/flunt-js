@@ -1,6 +1,6 @@
 {
   "name": "flunt",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Flunt is a package to help you to validate your business rules",
   "main": "index.js",
   "scripts": {
