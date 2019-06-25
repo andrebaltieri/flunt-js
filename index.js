@@ -22,11 +22,6 @@ ValidationContract.prototype.hasMaxLen = (value, max, property, message) => {
     errors.push({ property: property, message: message });
 };
 
-ValidationContract.prototype.hasLen = (value, len, property, message) => {
-  if (!value || value.length != len)
-    errors.push({ property: property, message: message });
-};
-
 ValidationContract.prototype.isFixedLen = (value, len, property, message) => {
   if (value.length != len)
     errors.push({ property: property, message: message });
@@ -54,4 +49,5 @@ ValidationContract.prototype.isValid = () => {
   return errors.length == 0;
 };
 
+//export default ValidationContract;
 module.exports = ValidationContract;
