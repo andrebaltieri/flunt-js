@@ -23,7 +23,7 @@ ValidationContract.prototype.hasMaxLen = (value, max, property, message) => {
 };
 
 ValidationContract.prototype.isFixedLen = (value, len, property, message) => {
-  if (value.length != len)
+  if (!value || value.length != len)
     errors.push({ property: property, message: message });
 };
 
@@ -37,6 +37,40 @@ ValidationContract.prototype.IsNullOrUndefined = (value, property, message) => {
     errors.push({ property: property, message: message });
 };
 
+/* Date Validations */
+
+function _isDate(value) {
+  return Object.prototype.toString.call(value) == "[object Date]";
+}
+
+ValidationContract.prototype.IsDate = (value, property, message) => {
+  if (!_isDate(value)) {
+    errors.push({ property: property, message: message });
+  }
+};
+
+ValidationContract.prototype.DateIsGreaterThan = (
+  value,
+  comparer,
+  property,
+  message
+) => {
+  if (!_isDate(value) || !_isDate(comparer) || value <= comparer)
+    errors.push({ property: property, message: message });
+};
+
+ValidationContract.prototype.DateIsLessThan = (
+  value,
+  comparer,
+  property,
+  message
+) => {
+  if (!_isDate(value) || !_isDate(comparer) || value >= comparer)
+    errors.push({ property: property, message: message });
+};
+
+/* End Date Validations */
+
 ValidationContract.prototype.errors = () => {
   return errors;
 };
@@ -45,7 +79,7 @@ ValidationContract.prototype.clear = () => {
   errors = [];
 };
 
-ValidationContract.prototype.isValid = () => {
+ValidationContract.prototype.IsValid = () => {
   return errors.length == 0;
 };
 
