@@ -12,14 +12,6 @@ You can find a port of this library to Dotnet here: https://github.com/andrebalt
 
 FluntJS is a package to help you to validate your business rules
 
-## Dependencies
-
-.NET Standard 1.3+
-
-You can check supported frameworks here:
-
-https://docs.microsoft.com/pt-br/dotnet/standard/net-standard
-
 ## Instalation
 
 This package is available through Node Package Manager (NPM) Packages: https://www.npmjs.com/package/flunt
