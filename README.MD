@@ -28,6 +28,27 @@ npm install flunt
 yarn add flunt
 ```
 
+## Validations Available
+
+| Validation | Description                                        |
+| ---------- | -------------------------------------------------- |
+| isRequired | Check if field has been send                       |
+| hasMinLen  | Check if the field has the minimum length informed |
+
+## Usage
+
+```
+const ValidationContract = require('flunt');
+
+let contract = new ValidationContract();
+contract.hasMinLen(req.body.name, 3, 'name', 'The name has been minimum 3 characters lenght');
+
+// If data is invalid
+if (!contract.isValid()) {
+    return response.status(400).send(contract.errors());
+}
+```
+
 # About the Art
 
 All logo, icons, colors and fonts were provided with love by Gregory Buso
