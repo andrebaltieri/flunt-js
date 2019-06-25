@@ -6,6 +6,7 @@ function ValidationContract() {
   errors = [];
 }
 
+// Check if the field has been created
 ValidationContract.prototype.isRequired = (value, property, message) => {
   if (!value || value.length <= 0)
     errors.push({ property: property, message: message });
