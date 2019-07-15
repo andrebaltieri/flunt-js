@@ -1,5 +1,7 @@
 ![Flunt](https://raw.githubusercontent.com/andrebaltieri/flunt/master/media/flunt-horizontal.png)
 
+![Portuguese Version](https://github.com/luizhfraraujo/flunt-js/blob/master/README-ptBR.MD)
+
 # Flunt for Java
 
 You can find a port of this library to Java here: https://github.com/carlosbritojun/jflunt
