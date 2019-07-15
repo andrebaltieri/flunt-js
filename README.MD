@@ -1,6 +1,6 @@
 ![Flunt](https://raw.githubusercontent.com/andrebaltieri/flunt/master/media/flunt-horizontal.png)
 
-![Portuguese Version](https://github.com/luizhfraraujo/flunt-js/blob/master/README-ptBR.MD)
+[Portuguese Version](https://github.com/luizhfraraujo/flunt-js/blob/master/README-ptBR.MD)
 
 # Flunt for Java
 
